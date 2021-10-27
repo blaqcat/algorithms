@@ -77,18 +77,23 @@ class SLinkedList:
                     temp_node = temp_node.next
                     index += 1
                 next_node = temp_node.next
-                temp_node = next_node.next
-
+                temp_node.next = next_node.next
+    
+    #Delete Entire Singly_Linked
+    def deleteEntireSLL(self):
+        if self.head is None:
+            print("The SLL does not exist")
+        else:
+            self.head = None
+            self.tail = None
 
 singly_linked_list = SLinkedList()
-singly_linked_list.insert_sll(1, 1)
+singly_linked_list.insert_sll(1, 0)
 singly_linked_list.insert_sll(2, 1)
 singly_linked_list.insert_sll(3, 1)
 singly_linked_list.insert_sll(4, 1)
-singly_linked_list.insert_sll(0, 0)
 
 print([node.value for node in singly_linked_list])
-singly_linked_list.delete_node(0)
 singly_linked_list.delete_node(1)
 print([node.value for node in singly_linked_list])
 
